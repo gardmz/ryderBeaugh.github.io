@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 11th Birthday Ryder!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffcc99;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 28px;
+            color: #ff0066;
+            text-shadow: 2px 2px 4px #ff99cc;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        #message {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 2px solid #ff0066;
+            border-radius: 10px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        #submit-button {
+            background-color: #ff0066;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        #confirmation-message {
+            font-size: 18px;
+            color: #009900;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Happy 11th Birthday Ryder!</h1>
+        <img src="balloons.png" alt="Balloons" width="100">
+        <p>Wishing you a day filled with laughter, joy, and lots of cake!</p>
+        <p>Feel free to leave a birthday message:</p>
+        <textarea id="message" rows="4" placeholder="Your birthday message"></textarea>
+        <br>
+        <button id="submit-button">Send Birthday Wishes</button>
+        <p id="confirmation-message"></p>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById("submit-button");
+        const messageInput = document.getElementById("message");
+        const confirmationMessage = document.getElementById("confirmation-message");
+
+        submitButton.addEventListener("click", function () {
+            const message = messageInput.value;
+            if (message.trim() !== "") {
+                confirmationMessage.textContent = "Your birthday wishes have been sent!";
+                messageInput.value = "";
+            } else {
+                confirmationMessage.textContent = "Please enter a message before sending.";
+            }
+        });
+    </script>
+</body>
+</html>
